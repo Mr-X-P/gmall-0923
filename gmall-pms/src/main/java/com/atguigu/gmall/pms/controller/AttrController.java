@@ -2,8 +2,11 @@ package com.atguigu.gmall.pms.controller;
 
 import java.util.List;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.conditions.query.QueryChainWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,6 +36,21 @@ public class AttrController {
 
     @Autowired
     private AttrService attrService;
+    @GetMapping("category/{attrId}")
+    public ResponseVo<List<AttrEntity>> queryAttrsBycid(@PathVariable("attrId")Long cid, @RequestParam(value = "type",required = false)Integer type, @RequestParam(value = "searchType",required = false)Integer serchType){
+        List<AttrEntity> attrEntities = attrService.queryAttrsBycid(cid,type,serchType);
+        return ResponseVo.ok(attrEntities);
+
+    }
+
+    @GetMapping("group/{groupId}")
+    public ResponseVo<List<AttrEntity>> attrentity(@PathVariable("groupId")Long gid){
+        List<AttrEntity> attrEntities=attrService.list(
+                new QueryWrapper<AttrEntity>().eq("group_id",gid)
+        );
+        return ResponseVo.ok(attrEntities);
+
+    }
 
     /**
      * 列表

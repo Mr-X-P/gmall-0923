@@ -19,7 +19,36 @@ import java.util.Map;
 public class PageParamVo {
 
 	private static final long serialVersionUID = 1L;
-	//当前页码
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public int getPageNum() {
+        return pageNum;
+    }
+
+    public void setPageNum(int pageNum) {
+        this.pageNum = pageNum;
+    }
+
+    public int getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    //当前页码
     private int pageNum = 1;
     //每页条数
     private int pageSize = 10;

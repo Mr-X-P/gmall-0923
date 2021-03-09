@@ -1,6 +1,9 @@
 package com.atguigu.gmall.pms.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -15,7 +18,8 @@ import com.atguigu.gmall.pms.service.CategoryService;
 
 @Service("categoryService")
 public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, CategoryEntity> implements CategoryService {
-
+    @Autowired(required = false)
+    private CategoryMapper categoryMapper;
     @Override
     public PageResultVo queryPage(PageParamVo paramVo) {
         IPage<CategoryEntity> page = this.page(
@@ -24,6 +28,15 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, CategoryEnt
         );
 
         return new PageResultVo(page);
+    }
+
+    @Override
+    public List<CategoryEntity> queryCategory(Long parentId) {
+        QueryWrapper<CategoryEntity> wrapper = new QueryWrapper<>();
+        if (parentId !=-1){
+            wrapper.eq("parent_id",parentId);
+        }
+        return categoryMapper.selectList(wrapper);
     }
 
 }
