@@ -34,7 +34,7 @@ public class AttrServiceImpl extends ServiceImpl<AttrMapper, AttrEntity> impleme
         if (cid != 0){
             queryWrapper.eq("category_id",cid);
         }
-        if (type != 0){
+        if (type != null){
             queryWrapper.eq("type",type);
         }
         if (serchType != null){

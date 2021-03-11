@@ -24,11 +24,11 @@ import java.util.*;
 
 @Service
 public class ShiroServiceImpl implements ShiroService {
-    @Autowired
+    @Autowired(required = false)
     private SysMenuDao sysMenuDao;
-    @Autowired
+    @Autowired(required = false)
     private SysUserDao sysUserDao;
-    @Autowired
+    @Autowired(required = false)
     private SysUserTokenDao sysUserTokenDao;
 
     @Override

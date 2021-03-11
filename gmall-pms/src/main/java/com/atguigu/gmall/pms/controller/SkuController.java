@@ -3,6 +3,7 @@ package com.atguigu.gmall.pms.controller;
 import java.util.List;
 
 import com.atguigu.gmall.pms.entity.CategoryEntity;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,12 @@ public class SkuController {
 
     @Autowired
     private SkuService skuService;
+
+    @GetMapping("spu/{spuId}")
+    public ResponseVo<List<SkuEntity>> skuBySpuId(@PathVariable("spuId")Long spuId){
+        List<SkuEntity> skuAll = skuService.list(new QueryWrapper<SkuEntity>().eq("spu_id",spuId));
+        return ResponseVo.ok(skuAll);
+    }
 
     /**
      * 列表

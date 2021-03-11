@@ -45,4 +45,55 @@ public class SpuAttrValueEntity implements Serializable {
 	 */
 	private Integer sort;
 
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getSpuId() {
+		return spuId;
+	}
+
+	public void setSpuId(Long spuId) {
+		this.spuId = spuId;
+	}
+
+	public Long getAttrId() {
+		return attrId;
+	}
+
+	public void setAttrId(Long attrId) {
+		this.attrId = attrId;
+	}
+
+	public String getAttrName() {
+		return attrName;
+	}
+
+	public void setAttrName(String attrName) {
+		this.attrName = attrName;
+	}
+
+	public String getAttrValue() {
+		return attrValue;
+	}
+
+	public void setAttrValue(String attrValue) {
+		this.attrValue = attrValue;
+	}
+
+	public Integer getSort() {
+		return sort;
+	}
+
+	public void setSort(Integer sort) {
+		this.sort = sort;
+	}
 }

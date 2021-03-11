@@ -1,10 +1,13 @@
 package com.atguigu.gmall.pms.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 import java.util.Date;
+
+import jdk.internal.util.xml.impl.Input;
 import lombok.Data;
 
 /**
@@ -22,11 +25,30 @@ public class SpuDescEntity implements Serializable {
 	/**
 	 * 商品id
 	 */
-	@TableId
+	@TableId(type = IdType.INPUT)
 	private Long spuId;
 	/**
 	 * 商品介绍
 	 */
 	private String decript;
 
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
+
+	public Long getSpuId() {
+		return spuId;
+	}
+
+	public void setSpuId(Long spuId) {
+		this.spuId = spuId;
+	}
+
+	public String getDecript() {
+		return decript;
+	}
+
+	public void setDecript(String decript) {
+		this.decript = decript;
+	}
 }

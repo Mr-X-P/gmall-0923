@@ -42,4 +42,47 @@ public class SkuBoundsEntity implements Serializable {
 	 */
 	private Integer work;
 
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getSkuId() {
+		return skuId;
+	}
+
+	public void setSkuId(Long skuId) {
+		this.skuId = skuId;
+	}
+
+	public BigDecimal getGrowBounds() {
+		return growBounds;
+	}
+
+	public void setGrowBounds(BigDecimal growBounds) {
+		this.growBounds = growBounds;
+	}
+
+	public BigDecimal getBuyBounds() {
+		return buyBounds;
+	}
+
+	public void setBuyBounds(BigDecimal buyBounds) {
+		this.buyBounds = buyBounds;
+	}
+
+	public Integer getWork() {
+		return work;
+	}
+
+	public void setWork(Integer work) {
+		this.work = work;
+	}
 }
