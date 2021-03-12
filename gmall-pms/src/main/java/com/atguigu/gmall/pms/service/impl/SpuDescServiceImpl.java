@@ -11,11 +11,11 @@ import com.atguigu.gmall.common.bean.PageParamVo;
 import com.atguigu.gmall.pms.mapper.SpuDescMapper;
 import com.atguigu.gmall.pms.entity.SpuDescEntity;
 import com.atguigu.gmall.pms.service.SpuDescService;
+import org.springframework.transaction.annotation.Transactional;
 
 
 @Service("spuDescService")
 public class SpuDescServiceImpl extends ServiceImpl<SpuDescMapper, SpuDescEntity> implements SpuDescService {
-
     @Override
     public PageResultVo queryPage(PageParamVo paramVo) {
         IPage<SpuDescEntity> page = this.page(
